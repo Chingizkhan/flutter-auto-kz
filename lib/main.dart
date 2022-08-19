@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/screen/main/screen/MainScreen.dart';
-import 'screen/auth/screen/LoginScreen.dart';
+import 'package:flutter_projects/components/navigation/NavigationConfig.dart';
+import 'package:flutter_projects/utils/setInitialRoute.dart';
+import 'components/navigation/Navigation.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // final initialRoute = InitialRoute();
+  // initialRoute.init();
+
   runApp(const MaterialApp(
     home: MyApp(),
   ));
@@ -14,15 +19,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Auto.kz',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
-      routes: {
-        '/login': (context) => const LoginScreen(),
-        '/main': (context) => const MainScreen(),
-      },
+      initialRoute: NavigationConfig.login,
+      routes: navigationCreate(),
     );
   }
 }

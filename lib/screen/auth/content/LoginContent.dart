@@ -9,8 +9,6 @@ class LoginContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = Provider.of<LoginModel>(context);
 
-    print('user ${state.user}');
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
